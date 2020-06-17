@@ -24,7 +24,7 @@ top_dict = {
 
 subreddit = red.subreddit('mechanicalkeyboards')
 print(subreddit.subscribers)
-top_subreddit = subreddit.top()
+top_subreddit = subreddit.hot(limit=5)
 
 for post in top_subreddit:
     top_dict['title'].append(post.title)
@@ -37,4 +37,4 @@ for post in top_subreddit:
 dftop = pd.DataFrame(top_dict)
 dftop['date'] = pd.to_datetime(dftop.created, unit='s')
 print(dftop)
-dftop.to_csv('./top posts MK.csv', index=False)
+dftop.to_csv('./hot posts MK.csv', index=False)
