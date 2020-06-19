@@ -24,7 +24,7 @@ top_dict = {
 
 subreddit = red.subreddit('mechanicalkeyboards')
 print(subreddit.subscribers)
-top_subreddit = subreddit.hot(limit=5)
+top_subreddit = subreddit.top()
 
 for post in top_subreddit:
     top_dict['title'].append(post.title)
